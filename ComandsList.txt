@@ -1,0 +1,67 @@
+=====================================================
+Configuración inicial
+=====================================================
+git config --global user.name "NombreUsuario"				| Configurar nombre de usuario
+git config --global user.mail CorreoUsuario					| Configurar correo de usuario
+git config --global core.editor "core --wait"				| Configurar VSCode por defecto - si no se hace se utiliza SublimeText
+git config --global -e										| Visualizar configuración de Git
+git config --global core.autocrlf true						| Saltos de linea en Windows
+git config -h												| lista de comandos
+
+=====================================================
+Navegacion
+=====================================================
+cd NombreCarpeta											| Navegacion de carpetas
+ls 															| Listar elementos
+pwd															| Visualizar ruta
+
+=====================================================
+Administracion de proyecto
+=====================================================
+git init													| Inicializar Git en carpeta
+git status													| Ver estado de archivos y carpetas
+git status -s												| Alternativa a git status
+git add NombreArchivo.Extension								| Agregar cambios a etapa de Staging
+git commit -m "Comentario"									| Confirmar cambios en proyecto
+git log														| Registro de cambios
+git checkout -- NombreArchivo.Extension						| Eliminar cambios en archivos
+git diff NombreArchivo.Extension							| Visualizar cambios en archivo
+git diff --staged											| Cambios que se encuentran en etapa stage
+git branch													| Visualizar los branchs del proyecto
+git branch NombreNuevoBranch								| Agregar nueva rama al proyecto
+git checkout NombreBranch 									| Cambiarse a otro branch de trabajo
+git checkout -b NombreNuevaRama								| Crear y moverse a nueva Rama
+git add .													| Agregar todos los cambios (No recomendado usar)
+git merge NombreRama 										| Agregar cambios de NombreRama a Rama Master 
+
+Crear archivo .gitignore en raiz de proyecto para agregar archivos o carpetas que se desean ignorar, a este archivo si se debe hacer commit
+
+---Para git status -s
+M  NombreArchivo											| Archivo modificado
+?? NombreArchivo											| Archivo no agregado
+A  NombreArchivo 											| Archivo agregado
+
+=====================================================
+Carpetas y archivos de trabajo
+=====================================================
+mkdir nombreCarpeta											| Crear carpetas - directorios
+ls -a														| Mostrar elementos ocultos
+
+rm NombreArchivo.Extension									| Eliminar Archivo
+git rm NombreArchivo.Extension								| Eliminar saltando el paso de Staging (Antes del Commit)
+
+git restore --stage NombreArchivo.Extension					| Sacar de la etapa de Staging (Antes del Commit)
+git restore NombreArchivo.Extension							| Restaurar Archivo
+
+mv NombreArchivo.Extension NuevoNombre.Extension			| Cambiar nombre de archivo
+git mv NombreArchivo.Extension nuevoNombre.Extension		| Cambiar nombre agregando directamente a Stage (Antes del commit)
+
+cat NombreArchivo.Extension									| Muestra el contenido del archivo
+=====================================================
+git remote add origin EnlaceWeb								| Insertar en repositorio
+git remote set-url origin EnlaceWeb							| Si genera error el add
+git push -u origin master									| Confirmar cambios en repositorio
+git clone DireccionWeb										| Descargar un repositorio
+=====================================================
+
+
